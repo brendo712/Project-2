@@ -1,0 +1,13 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+        <h1>Create a Profile</h1>
+        <form action="/users" method="POST">
+            Username: <input type="text" name="username" /><br/>
+            Password: <input type="password" name="password" /><br/>
+            Name: <input type="name" name="name" /><br/>
+            Location: <input type="location" name="location" /><br/>
+            Favorite Club: <input type="club" name="club" /><br/>
+            Favorite Player: <input type="player" name="player" /><br/>
+            <input type="submit" value="Create"/>
+        </form>
+<%- include('../partials/footer.ejs') %>

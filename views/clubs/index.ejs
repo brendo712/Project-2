@@ -1,0 +1,26 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+        <h1>Premier League Table</h1>
+        <table>
+          <% for(let i = 0; i < clubs.length; i++){ %>
+          <tr>
+            <th>Position</th>
+            <th>Club</th>
+            <th>Matches Played</th>
+            <th>Wins</th>
+            <th>Draws</th>
+            <th>Losses</th>
+            <th>Points</th>
+          </tr>
+          <tr>
+            <td><%=clubs[i].position; %></td>
+            <td><%=clubs[i].name; %></td>
+            <td><%=clubs[i].matches; %></td>
+            <td><%=clubs[i].wins; %></td>
+            <td><%=clubs[i].draws; %></td>
+            <td><%=clubs[i].losses; %></td>
+            <td><%=clubs[i].points; %></td>
+          </tr>
+          <% } %>
+        </table>
+<%- include('../partials/footer.ejs') %>

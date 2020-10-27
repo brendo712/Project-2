@@ -6,7 +6,7 @@ const userSchema = Schema({
   password: String,
   name: {type: String},
   location: {type: String},
-  allegiance: {type: String},
+  club: {type: String},
   player: {type: String}
 })
 

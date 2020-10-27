@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const clubSchema = new mongoose.Schema({
     name:  { type: String, required: true },
+    matches: {type: Number}, 
     wins: {type: Number},
     draws: {type: Number},
     losses: {type: Number},

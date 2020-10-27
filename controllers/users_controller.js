@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
   User.create(req.body, (err, createUser) => {
     console.log('User is created', createUser)
-    res.redirect('/clubs')
+    res.redirect('/')
   })
 })
 
