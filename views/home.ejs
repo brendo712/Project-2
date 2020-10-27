@@ -1,6 +1,27 @@
 <%- include('./partials/header.ejs') %>
 <%- include('./partials/nav.ejs') %>
   <h1>Banter!</h1>
+  <div class="messageInput">
+    <form action="/" method="POST">
+      <p>Author: <input type="text" name="author" value="author"></p>
+      <p>Subject: <input type="text" name="subject" value="subject"></p>
+      <p>Banter: <input type="textarea" name="message" value="message" rows="3"></p>
+      <input type="submit" name="" value="Post Banter"/>
+    </form>
+  </div>
+  <div class="messages">
+    <ul>
+      <% for(let i = 0; i < messages.length; i++){ %>
+      <li>
+        <div class="messageBody">
+          <h4><%=messages[i].author; %></h4>
+          <h5><%=messages[i].subject; %></h5>
+          <p><%=messages[i].message; %></p>
+        </div>
+      </li>
+      <% } %>
+    </ul>
+  </div>
   <p>Thanks for using our site</p>
 
   <div>

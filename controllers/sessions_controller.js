@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
     if (err) {
       console.log(err)
       res.send('Problem with db!')
-    } else if (!founduser) {
+    } else if (!foundUser) {
       res.send('<a href="/">No user found</a>')
     } else {
       if (bcrypt.compareSync(req.body.password, foundUser.password)) {

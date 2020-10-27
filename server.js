@@ -34,7 +34,8 @@ const usersController = require('./controllers/users_controller.js')
 app.use('/users', usersController)
 const sessionsController = require('./controllers/sessions_controller.js')
 app.use('/sessions', sessionsController)
-
+const messagesController = require('./controllers/messages_controller.js')
+app.use('/', messagesController)
 
 // GET HOME ROUTE
 app.get('/', (req, res) => {

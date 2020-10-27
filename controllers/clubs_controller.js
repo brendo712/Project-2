@@ -16,8 +16,8 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/', isAuthenticated, (req, res) => {
-  Club.create(req.body, (err, createdFruit) => {
-    res.redirect('clubs')
+  Club.create(req.body, (err, createdClub) => {
+    res.redirect('/clubs')
   })
 })
 
@@ -62,7 +62,7 @@ router.put('/:id', isAuthenticated, (req, res) => {
 
 router.delete('/:id', isAuthenticated, (req, res) => {
   Club.findByIdAndRemove(req.params.id, (err, data) => {
-    res.redirect('clubs')
+    res.redirect('/clubs')
   })
 })
 
