@@ -37,7 +37,7 @@ router.get('/seed', (req, res) => {
 })
 
 router.get('/:id', isAuthenticated, (req, res) => {
-  Club.findById(req.params.id, (err, foundClubs) => {
+  Club.findById(req.params.id, (err, foundClub) => {
     res.render('clubs/show.ejs', {
       club: foundClub,
       currentUser: req.session.currentUser

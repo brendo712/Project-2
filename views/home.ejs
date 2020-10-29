@@ -1,31 +1,38 @@
-<%- include('./partials/header.ejs') %>
-<%- include('./partials/nav.ejs') %>
+<div class="container">
+  <%- include('./partials/header.ejs') %>
   <h1>Banter!</h1>
-  <div class="messageInput">
-    <form action="/" method="POST">
-      <p>Author: <input type="text" name="author"></p>
-      <p>Subject: <input type="text" name="subject"></p>
-      <label for="Banter">Banter</label>
-      <p><textarea id="Banter" name="message" rows="3" required=true></textarea></p>
-      <input type="submit" name="" value="Post Banter"/>
-    </form>
-  </div>
-  <div class="messages">
-    <ul>
-      <% for(let i = 0; i < messages.length; i++){ %>
-      <li>
-        <div class="messageBody">
-          <h4><%=messages[i].author; %></h4>
-          <h5><%=messages[i].subject; %></h5>
-          <p><%=messages[i].message; %></p>
+  <%- include('./partials/nav.ejs') %>
+      <form action="/" method="POST">
+        <div class="form-group">
+          <label for="Author">Author:</label>
+          <p><input id="Author" type="text" name="author"></p>
         </div>
-      </li>
-      <% } %>
-    </ul>
-  </div>
-  <p>Thanks for using our site</p>
+        <div class="form-group">
+          <label for="Subject">Subject:</label>
+          <p><input id="Subject" type="text" name="subject"></p>
+        </div>
+        <div class="form-group">
+          <label for="Banter">Banter:</label>
+          <p><textarea id="Banter" name="message" rows="3" required=true></textarea></p>
+        </div>
+        <input type="submit" name="" value="Post Banter"/>
+      </form>
+    <div class="list-unstyled">
+        <% for(let i = 0; i < messages.length; i++){ %>
+        <li class="media">
+          <div class="media-body">
+            <h4><%=messages[i].author; %></h4>
+            <h5><%=messages[i].subject; %></h5>
+            <p><%=messages[i].message; %></p>
+          </div>
+        </li>
+        <% } %>
+        <hr>
+    </div>
+    <p>Thanks for using our site</p>
 
-  <div>
-  </div>
+    <div>
+    </div>
 
   <%- include('./partials/footer.ejs') %>
+</div>

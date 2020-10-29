@@ -146,7 +146,7 @@ module.exports = [
   },{
     name: 'Sheffield United',
     matches: 6,
-    wins: 20,
+    wins: 0,
     draws: 1,
     losses: 5,
     points: 1,
@@ -154,7 +154,7 @@ module.exports = [
   },{
     name: 'Fulham',
     matches: 6, 
-    wins: 20,
+    wins: 0,
     draws: 1,
     losses: 5,
     points: 1,
