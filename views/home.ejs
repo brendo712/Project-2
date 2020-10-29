@@ -5,7 +5,11 @@
       <form class="messageInput" action="/" method="POST">
         <div class="form-group">
           <label for="Author">Author:</label>
-          <p><input id="Author" type="text" name="author"></p>
+          <% if (currentUser) { %>
+          <p><input id="Author" type="text" name="author" value="<%=currentUser.username%>" readonly></p>
+          <% } else { %>
+          <p><input id="Author" type="text" name="author"</p>
+          <% } %>
         </div>
         <div class="form-group">
           <label for="Subject">Subject:</label>
