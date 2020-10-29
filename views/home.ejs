@@ -2,7 +2,7 @@
   <%- include('./partials/header.ejs') %>
   <h1>Banter!</h1>
   <%- include('./partials/nav.ejs') %>
-      <form action="/" method="POST">
+      <form class="messageInput" action="/" method="POST">
         <div class="form-group">
           <label for="Author">Author:</label>
           <p><input id="Author" type="text" name="author"></p>
@@ -20,10 +20,10 @@
     <div class="list-unstyled">
         <% for(let i = 0; i < messages.length; i++){ %>
         <li class="media">
-          <div class="media-body">
-            <h4><%=messages[i].author; %></h4>
-            <h5><%=messages[i].subject; %></h5>
-            <p><%=messages[i].message; %></p>
+          <div class="post">
+            <h4 class="author">Author: <%=messages[i].author; %></h4>
+            <h5 class="subject">Subject: <%=messages[i].subject; %></h5>
+            <p class="message"><%=messages[i].message; %></p>
           </div>
         </li>
         <% } %>

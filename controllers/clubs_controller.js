@@ -11,6 +11,17 @@ const isAuthenticated = (req, res, next) => {
   }
 }
 
+//  Index
+router.get('/', (req, res) => {
+  Club.find({}, (err, allClubs) => {
+    res.render('clubs/index.ejs', {
+      clubs: allClubs,
+      currentUser: req.session.currentUser
+    })
+  })
+})
+
+// Create
 router.get('/new', (req, res) => {
   res.render('clubs/new.ejs', {currentUser: req.session.currentUser})
 })
@@ -21,21 +32,15 @@ router.post('/', isAuthenticated, (req, res) => {
   })
 })
 
-router.get('/', (req, res) => {
-  Club.find({}, (err, allClubs) => {
-    res.render('clubs/index.ejs', {
-      clubs: allClubs,
-      currentUser: req.session.currentUser
-    })
-  })
-})
 
+// Seed
 router.get('/seed', (req, res) => {
   Club.insertMany(Clubs, (err, data) => {
     res.redirect('/clubs')
   })
 })
 
+// Show
 router.get('/:id', isAuthenticated, (req, res) => {
   Club.findById(req.params.id, (err, foundClub) => {
     res.render('clubs/show.ejs', {
@@ -45,6 +50,7 @@ router.get('/:id', isAuthenticated, (req, res) => {
   })
 })
 
+// Edit
 router.get('/:id/edit', (req, res) => {
   Club.findById(req.params.id, (err, foundClub) => {
     res.render('clubs/edit.ejs', {
@@ -60,6 +66,7 @@ router.put('/:id', isAuthenticated, (req, res) => {
   })
 })
 
+// Delete
 router.delete('/:id', isAuthenticated, (req, res) => {
   Club.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect('/clubs')

@@ -4,3 +4,20 @@ h1 {
 hr {
   border-top: 1px black;
 }
+
+.post{
+  border-style: double;
+  background-color: #343a40;
+  color: white;
+  width: 1078px;
+  margin: auto;
+  display:inline-block;
+}
+
+.author {
+  border-bottom: solid;
+}
+
+.subject {
+  border-bottom: solid;
+}

@@ -1,2 +1,17 @@
 <div class="container">
-</div>  
+  <%- include('../partials/header.ejs') %>
+  <h1>New Club Page</h1>
+  <%- include('../partials/nav.ejs') %>
+        <form action="/clubs" method="POST">
+          <p>Name: <input type="text" name="name"/></p>
+          <p>Matches Played: <input type="text" name="matches"/></p>
+          <p>Wins: <input type="text" name="wins"/></p>
+          <p>Draws: <input type="text" name="draws"/></p>
+          <p>Losses: <input type="text" name="losses"/></p>
+          <p>Points: <input type="text" name="points"/></p>
+          <p>Position: <input type="text" name="position"/></p>
+          <input type="submit" name="" value="Create Club"/>
+        </form>
+<%- include('../partials/footer.ejs') %>
+
+</div>

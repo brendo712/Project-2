@@ -1,0 +1,15 @@
+<div class="container">
+<%- include('../partials/header.ejs') %>
+<h1><%=user.username; %></h1>
+<%- include('../partials/nav.ejs') %>
+<div class="User">
+  <ul>
+    <li><%=users.name; %></li>
+    <li><%=users.location; %></li>
+    <li><%=users.club; %></li>
+    <li><%=users.player; %></li>
+  </ul>
+  <a href="/users/<%=users.id; %>/edit"> Edit Profile</a>
+
+<%- include('../partials/footer.ejs') %>
+</div>
